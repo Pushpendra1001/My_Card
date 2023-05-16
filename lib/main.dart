@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color.fromARGB(195, 230, 225, 225),
-        // backgroundColor: Colors.white,
         body: SafeArea(
           child: Center(
             child: Column(
@@ -41,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                     child: CircleAvatar(
                       radius: 80,
                       backgroundImage: AssetImage(
-                        'images/pushpendra_.jpg',
+                        'images/myphoto.jpg',
                       ),
                     ),
                   ),
@@ -77,6 +76,8 @@ class _MyAppState extends State<MyApp> {
                     color: Color.fromARGB(255, 3, 3, 3),
                   ),
                 ),
+
+                // contact details part start
                 Card(
                     color: Colors.white,
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
@@ -109,59 +110,84 @@ class _MyAppState extends State<MyApp> {
                             fontFamily: 'SourceSansPro'),
                       ),
                     )),
-
+                //  Contact details part end
                 // Icons part start
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+                  margin: EdgeInsets.symmetric(
+                    vertical: 25,
+                  ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        FontAwesomeIcons.instagram,
-                        color: Color.fromARGB(255, 208, 54, 105),
-                        size: 42,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.linkedin,
-                        color: Color.fromARGB(255, 48, 113, 166),
-                        size: 42,
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          FontAwesomeIcons.github,
-                          size: 42,
-                        ),
-                        onPressed: () async {
-                          var url =
-                              Uri.parse("https://github.com/pushpendra1001");
-                          if (await canLaunchUrl(url)) {
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                          icon: Icon(
+                            FontAwesomeIcons.instagram,
+                            color: Color.fromARGB(255, 208, 54, 105),
+                            size: 42,
+                          ),
+                          onPressed: () async {
+                            var url = Uri.parse(
+                                "https://www.instagram.com/pushpendra.1001/");
                             await launchUrl(url);
-                          } else {
-                            // throw "Could not launch";
-                          }
-                        },
+                          },
+                        ),
                       ),
-                      Icon(
-                        FontAwesomeIcons.facebook,
-                        color: Colors.blue,
-                        size: 42,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                          icon: Icon(
+                            FontAwesomeIcons.linkedin,
+                            color: Color.fromARGB(255, 48, 113, 166),
+                            size: 42,
+                          ),
+                          onPressed: () async {
+                            var url = Uri.parse(
+                                "https://www.linkedin.com/in/pushpendra-baswal-51198323b/");
+
+                            await launchUrl(url);
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                          icon: Icon(
+                            FontAwesomeIcons.github,
+                            size: 42,
+                          ),
+                          onPressed: () async {
+                            var url =
+                                Uri.parse("https://github.com/pushpendra1001");
+                            await launchUrl(url);
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                          icon: Icon(
+                            FontAwesomeIcons.facebook,
+                            color: Colors.blue,
+                            size: 42,
+                          ),
+                          onPressed: () async {
+                            var url = Uri.parse(
+                                "https://www.facebook.com/pushpendra.baswal.1");
+                            await launchUrl(url);
+                          },
+                        ),
                       ),
                     ],
                   ),
                 ),
-
-                // i will change
-
-                // i will change
+                // Icons part End
               ],
             ),
           ),
         ),
       ),
-
-      // functions start
-
-      // function end
     );
   }
 }
